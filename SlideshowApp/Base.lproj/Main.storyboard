@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,27 +22,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-J4-u0R">
-                                <rect key="frame" x="101" y="340" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-yK-QvO">
+                                <rect key="frame" x="149" y="473" width="77" height="30"/>
+                                <state key="normal" title="再生・停止"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-yK-QvO">
-                                <rect key="frame" x="164" y="340" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myr-Uj-7M5">
+                                <rect key="frame" x="228" y="402" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myr-Uj-7M5">
-                                <rect key="frame" x="229" y="340" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-Qu-qrR">
+                                <rect key="frame" x="47" y="102" width="281" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="535-ls-xKq"/>
+                                    <constraint firstAttribute="height" constant="218" id="q8X-3c-fJ6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-J4-u0R">
+                                <rect key="frame" x="116" y="402" width="31" height="30"/>
+                                <state key="normal" title="進む"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OSD-J4-u0R" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="82" id="ADk-Vg-c0H"/>
+                            <constraint firstItem="aDe-Qu-qrR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jc6-rS-ozy"/>
+                            <constraint firstItem="OSD-J4-u0R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="Kor-8b-dsL"/>
+                            <constraint firstItem="6EG-yK-QvO" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="153" id="SpG-hK-5F3"/>
+                            <constraint firstItem="aDe-Qu-qrR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="VqZ-3O-bfw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Myr-Uj-7M5" secondAttribute="trailing" constant="100" id="agw-fp-iwf"/>
+                            <constraint firstItem="Myr-Uj-7M5" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="82" id="kzk-m7-Ks2"/>
+                            <constraint firstItem="6EG-yK-QvO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z2i-Hd-KbJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SlideshowImageView" destination="aDe-Qu-qrR" id="i4X-oC-uR6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="457-gl-Lq3">
@@ -62,4 +81,7 @@
             <point key="canvasLocation" x="1055" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1.jpg" width="960" height="720"/>
+    </resources>
 </document>
