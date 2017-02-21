@@ -9,11 +9,18 @@
 import UIKit
 
 class PictureViewController: UIViewController {
-
+    @IBOutlet var enlargedPic: UIImageView!
+    
+    var imageName : String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
+        
+        enlargedPic.image = UIImage(named: imageName)
     }
 
     override func didReceiveMemoryWarning() {

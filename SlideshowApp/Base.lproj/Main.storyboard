@@ -23,39 +23,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-yK-QvO">
-                                <rect key="frame" x="149" y="473" width="77" height="30"/>
-                                <state key="normal" title="再生・停止"/>
+                                <rect key="frame" x="165" y="435" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="rAF-DC-eV9"/>
+                                </constraints>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="playSlideshow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nm7-ix-UaH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myr-Uj-7M5">
-                                <rect key="frame" x="228" y="402" width="31" height="30"/>
-                                <state key="normal" title="戻る"/>
+                                <rect key="frame" x="228" y="364" width="31" height="30"/>
+                                <state key="normal" title="進む"/>
+                                <connections>
+                                    <action selector="moveOn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ihx-xy-N55"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-Qu-qrR">
-                                <rect key="frame" x="47" y="102" width="281" height="218"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-Qu-qrR">
+                                <rect key="frame" x="62.5" y="102" width="250" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="281" id="535-ls-xKq"/>
-                                    <constraint firstAttribute="height" constant="218" id="q8X-3c-fJ6"/>
+                                    <constraint firstAttribute="height" constant="180" id="Rd2-f1-Xpt"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-J4-u0R">
-                                <rect key="frame" x="116" y="402" width="31" height="30"/>
-                                <state key="normal" title="進む"/>
+                                <rect key="frame" x="116" y="364" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="moveBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRT-ju-UeC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-n1-XgX">
+                                <rect key="frame" x="62" y="102" width="250" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Mxt-gQ-Wls"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wlK-er-dj9"/>
+                                    <segue destination="KTg-SZ-6ZV" kind="show" identifier="toPictureViewController" id="uf9-4b-7Xa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="OSD-J4-u0R" firstAttribute="top" secondItem="O9J-n1-XgX" secondAttribute="bottom" constant="82" id="2oL-6z-PNk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O9J-n1-XgX" secondAttribute="trailing" constant="46.5" id="7Q9-Bd-zUT"/>
+                            <constraint firstItem="O9J-n1-XgX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="8E2-1G-4Vy"/>
+                            <constraint firstItem="6EG-yK-QvO" firstAttribute="top" secondItem="O9J-n1-XgX" secondAttribute="bottom" constant="153" id="9vV-ou-TgD"/>
                             <constraint firstItem="OSD-J4-u0R" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="82" id="ADk-Vg-c0H"/>
                             <constraint firstItem="aDe-Qu-qrR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jc6-rS-ozy"/>
                             <constraint firstItem="OSD-J4-u0R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="Kor-8b-dsL"/>
                             <constraint firstItem="6EG-yK-QvO" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="153" id="SpG-hK-5F3"/>
                             <constraint firstItem="aDe-Qu-qrR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="VqZ-3O-bfw"/>
+                            <constraint firstItem="aDe-Qu-qrR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46.5" id="XGy-d6-EpE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Myr-Uj-7M5" secondAttribute="trailing" constant="100" id="agw-fp-iwf"/>
+                            <constraint firstItem="Myr-Uj-7M5" firstAttribute="top" secondItem="O9J-n1-XgX" secondAttribute="bottom" constant="82" id="cQf-nm-D7Y"/>
                             <constraint firstItem="Myr-Uj-7M5" firstAttribute="top" secondItem="aDe-Qu-qrR" secondAttribute="bottom" constant="82" id="kzk-m7-Ks2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aDe-Qu-qrR" secondAttribute="trailing" constant="46.5" id="nvH-4d-ftG"/>
+                            <constraint firstItem="O9J-n1-XgX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46.5" id="oiP-7x-rB3"/>
                             <constraint firstItem="6EG-yK-QvO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z2i-Hd-KbJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SlideshowImageView" destination="aDe-Qu-qrR" id="i4X-oC-uR6"/>
+                        <outlet property="moveBackButton" destination="OSD-J4-u0R" id="6PJ-FF-fpE"/>
+                        <outlet property="moveOnButton" destination="Myr-Uj-7M5" id="Fei-b8-8Ku"/>
+                        <outlet property="picButton" destination="O9J-n1-XgX" id="yVM-lN-kOI"/>
+                        <outlet property="playButton" destination="6EG-yK-QvO" id="y13-gs-JbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,15 +106,43 @@
                     <view key="view" contentMode="scaleToFill" id="ARw-p4-zRA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4YO-Io-vEt">
+                                <rect key="frame" x="0.0" y="118" width="375" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="CWW-Gc-rBN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-vR-loA">
+                                <rect key="frame" x="164.5" y="480" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Byj-ay-zPS"/>
+                                    <constraint firstAttribute="height" constant="30" id="I0t-Y8-VuQ"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="Ch8-n5-O2V" kind="unwind" unwindAction="unwindWithSegue:" id="e4y-AZ-1pW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4YO-Io-vEt" firstAttribute="top" secondItem="v3G-2x-gR7" secondAttribute="bottom" constant="98" id="ACc-Bi-Ck5"/>
+                            <constraint firstAttribute="trailing" secondItem="4YO-Io-vEt" secondAttribute="trailing" id="QKo-Hk-nNJ"/>
+                            <constraint firstItem="NeE-vR-loA" firstAttribute="centerX" secondItem="ARw-p4-zRA" secondAttribute="centerX" id="Ttm-bU-Apo"/>
+                            <constraint firstItem="4YO-Io-vEt" firstAttribute="centerX" secondItem="ARw-p4-zRA" secondAttribute="centerX" id="UlK-uC-RVZ"/>
+                            <constraint firstItem="NeE-vR-loA" firstAttribute="top" secondItem="4YO-Io-vEt" secondAttribute="bottom" constant="82" id="bKm-Sf-Hg3"/>
+                            <constraint firstItem="4YO-Io-vEt" firstAttribute="leading" secondItem="ARw-p4-zRA" secondAttribute="leading" id="vZE-BJ-ct2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enlargedPic" destination="4YO-Io-vEt" id="EVX-Ue-HeX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKI-Lf-UZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ch8-n5-O2V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="143"/>
+            <point key="canvasLocation" x="1053.5999999999999" y="142.57871064467767"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="1.jpg" width="960" height="720"/>
-    </resources>
 </document>
